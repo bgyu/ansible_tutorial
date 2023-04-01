@@ -12,11 +12,11 @@ ansible all --key-file ~/.ssh/id_rsa_ansible -i inventory -m ping
 ansible all -m ping --extra-vars "ansible_user=ben"
 ```
 
-`all` means use all hosts defined in `inventory` file.
-`--key-file` specify ssh private key file
-`-i` inventory, specify what server nodes the comand applies to
-`-m` means module, here we are using module `ping`.
-`--extra-var` specify extra variables passed to `ansible`.
+* `all` means use all hosts defined in `inventory` file.
+* `--key-file` specify ssh private key file
+* `-i` inventory, specify what server nodes the comand applies to
+* `-m` means module, here we are using module `ping`.
+* `--extra-var` specify extra variables passed to `ansible`.
 
 If your current user name is different from ssh user name, then you need to speficy `ansible_user` via `--extra-vars` options.
 If your current user name is the same with ssh user name, then you don't need to specify `ansible_user`.
