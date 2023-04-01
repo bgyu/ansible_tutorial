@@ -5,9 +5,9 @@
   tasks:
 
 
-  - name: remove apache2 package
-    apt:
+  - name: remove apache and php
+    package:
       name: 
-        - apache2
-        - libapache2-mod-php
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
       state: absent
