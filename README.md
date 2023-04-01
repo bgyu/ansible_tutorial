@@ -45,8 +45,14 @@ ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
 # update all packages
 asnible all -m apt -a "upgrade=dist" --become --ask-become-pass
 ```
+
 * `-m apt` to run `apt` command in Ubuntu
 * `--become` to add `sudo` permission
 * `--ask-become-pass` prompt for `sudo` password
 
 
+### 4. Use playbook
+```bash
+ansible-playbook --ask-become-pass --extra-vars="anisble_user=ben" install_apache.yml
+
+```
