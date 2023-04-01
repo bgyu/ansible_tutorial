@@ -31,3 +31,22 @@ ansible all -m gather_facts --extra-vars "ansible_user=ben"
 ansible all -m gather_facts --limit 192.168.0.61 --extra-vars "ansible_user=ben"
 
 ```
+
+### 3. Run `sudo apt update`
+```bash
+ansible all -m apt -a update_cache=true --become --ask-become-pass --extra-vars="ansible_user=ben"
+
+# install vim-nox
+ansible all -m apt -a name=vim-nox --become --ask-become-pass
+
+# update snapd to latest
+ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+
+# update all packages
+asnible all -m apt -a "upgrade=dist" --become --ask-become-pass
+```
+* `-m apt` to run `apt` command in Ubuntu
+* `--become` to add `sudo` permission
+* `--ask-become-pass` prompt for `sudo` password
+
+
