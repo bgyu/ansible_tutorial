@@ -55,4 +55,7 @@ asnible all -m apt -a "upgrade=dist" --become --ask-become-pass
 ```bash
 ansible-playbook --ask-become-pass --extra-vars="anisble_user=ben" install_apache.yml
 
+# run playbook with tags
+ansible-playbook --tags web --ask-become-pass install_apache.yml
+
 ```

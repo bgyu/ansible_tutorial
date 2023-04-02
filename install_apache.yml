@@ -6,6 +6,7 @@
 
 
   - name: install apache and php
+    tags: web
     package:
       name: 
         - "{{ apache_package }}"

@@ -1,6 +1,13 @@
 # For Ubuntu
+[web_servers]
 192.168.0.61 apache_package=apache2 php_package=libapache2-mod-php
 192.168.0.62 apache_package=apache2 php_package=libapache2-mod-php
+
+[db_servers]
+192.168.0.61
+
+[file_servers]
+192.168.0.62
 
 # For Centos
 # 192.168.0.63 apache_package=httpd php_package=php
