@@ -17,3 +17,8 @@
       owner: root
       group: root
 
+  - name: create simone user
+    tags: always
+    user:
+      name: simone
+      group: root
