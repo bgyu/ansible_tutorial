@@ -22,3 +22,17 @@
     user:
       name: simone
       group: root
+
+  - name: add ssh key for simone
+    tags: always
+    authorized_key:
+      user: simone
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHW15/aZzIXqT6+djkMVTJgJ+y/L9LVj8OHlU+qxeZsNIeoLwxbpHJluiJgcod6uRWmcxcyvvTF33/7WrMayIRISjhsZLEVXOLHPBaMM+/5wzVhSPeBtM8p/DnnxaRdQgJaurdSTiZcbaQ4UIt1WbAw53EwFvOv/NmLOo1Fo8p9FT0ZGuvc15BCWffwYbAyta8l+9sRPzKpt5nnHxOSTtehU+Mj/HC/DMBTr5vAuIMkTQp8hNdM4sk4YUqdT67KZfiE96FNocElVST+08TW6RHC7NbnTDMqyhFLzCvPaX3mJ1fHbLK1uCKK7dIoZ5CFuYA+PZlVrKpEpZBlw59hjmlWsSSVI7T5+k9cp7Il27JpNCnO2Cj6tNLKt36oZ4VEC+kqBEh5DLsaW/0eXol0VOZ7XA74jkB7ES6xZeElyXW0+tE1YZ6Kb9JiubjQA+Parv5Mbrb1IWssifWuHdzFX1YXg9UAWkLpv83pYa9/edOqLa/Iu/OnEs4tntBKBykRSE= Ansible"
+
+  - name: add sudoers file for simone
+    tags: always
+    copy:
+      src: sudoer_simone
+      dest: /etc/sudoers.d/simone
+      owner: root
+      group: root
