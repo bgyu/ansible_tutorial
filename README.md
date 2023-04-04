@@ -58,4 +58,10 @@ ansible-playbook --ask-become-pass --extra-vars="anisble_user=ben" install_apach
 # run playbook with tags
 ansible-playbook --tags web --ask-become-pass install_apache.yml
 
+
+# run playbook without --ask-become-pass
+# We can do this because in ansible.cfg, we use `remote_user` as simone
+# and user simone is a sudoer, and no password is needed due to /etc/sudoers.d/simone
+ansible-playbook site.yml
+
 ```
